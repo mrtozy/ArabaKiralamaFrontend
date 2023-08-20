@@ -1,0 +1,52 @@
+<div class="container">
+    <h2>Add Car</h2>
+    <form [formGroup]="carAddForm" (ngSubmit)="addCar()">
+      <div class="form-group">
+        <label for="brandId">Brand</label>
+        <select class="form-control" id="brandId" formControlName="brandId">
+          <option value="0" disabled selected>Select brand</option>
+          <option *ngFor="let brand of brands" [value]="brand.brandId">{{ brand.brandName }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="colorId">Color</label>
+        <select class="form-control" id="colorId" formControlName="colorId">
+          <option value="0" disabled selected>Select color</option>
+          <option *ngFor="let color of colors" [value]="color.colorId">{{ color.colorName }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="model">Model</label>
+        <input type="text" class="form-control" id="carName" formControlName="carName">
+      </div>
+  
+      <div class="form-group">
+        <label for="dailyPrice">Daily Price</label>
+        <input type="number" class="form-control" id="dailyPrice" formControlName="dailyPrice">
+      </div>
+  
+      <div class="form-group">
+        <label for="modelYear">Model Year</label>
+        <input type="number" class="form-control" id="modelYear" formControlName="modelYear">
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" formControlName="description"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="findexScore">Findex Score</label>
+        <input type="number" class="form-control" id="findexScore" formControlName="findexScore">
+      </div>
+  
+      <div class="form-group">
+        <label for="images">Images</label>
+        <input type="file" id="images" (change)="setImages($event.target)" multiple>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Add Car</button>
+    </form>
+  </div>

@@ -1,0 +1,23 @@
+
+
+<h4 aria-errormessage="aria-current">Renkler</h4>
+
+<div *ngIf="dataLoaded==false" class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+
+  <div class="list-group">
+    <a
+      (click)="setCurrentColor(color)"
+      routerLink="/cars/color/{{ color.colorId }}"
+      *ngFor="let color of colors"
+      href="#"
+      [class]="getCurrentColorClass(color)"
+      aria-current="true" 
+    >
+     {{ color.colorName }}
+    </a>
+  </div>
+
+ 

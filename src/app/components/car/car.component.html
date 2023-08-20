@@ -1,0 +1,43 @@
+<div *ngIf="dataLoaded==false" class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  
+    <div class="form-group">
+      <label for="exampleInputEmail1">Arama</label>
+      <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText"  aria-describedby="emailHelp" placeholder="">
+      
+    </div>
+    <div *ngIf="filterText.length>2" class="alert alert-success">
+      {{filterText}} aradınız
+    </div>
+   
+  
+    <div *ngIf="dataLoaded==true" class="album py-5">
+      <div class="container">
+    
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col-md-4" *ngFor="let car of cars  | filterCarPipe:filterText">
+            <div class="card shadow-sm">
+              <img  class="d-block" [src]="getCarImagePath(car.carId)"
+                        width="100%">
+         
+              <div class="card-body">
+                <ul>
+                 Marka: {{ car.brandName }}   Model:  {{ car.carName }} 
+                </ul>
+                <p class="card-text">{{ car.description }}</p>
+                <br>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" routerLink="/cars/update/{{car.carId}}" >Güncelle</button>
+                   
+                   
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" routerLink="/cars/car-detail-page/{{car.carId}}" >Kirala</button>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>

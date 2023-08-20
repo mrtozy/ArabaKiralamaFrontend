@@ -1,0 +1,34 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Anasayfa <span class="sr-only"></span></a>
+      <a class="nav-item nav-link" href="http://localhost:4200/cars/add">Araba Ekle</a>
+
+      <!-- Kullanıcı oturum açmadıysa giriş ve kayıt bağlantıları gösterilecektir -->
+      <a *ngIf="!usr" class="nav-item nav-link" href="http://localhost:4200/giris">Giriş</a>
+      <a *ngIf="!usr" class="nav-item nav-link" href="http://localhost:4200/register">Kayıt</a>
+
+      <!-- Kullanıcı oturum açtıysa profil adını gösteren açılır kutu ve çıkış bağlantısı -->
+      <li class="nav-item dropdown" *ngIf="usr" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+          {{ usr }}
+        </a>
+        <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
+          <li ngbDropdownItem><a class="dropdown-item" href="http://localhost:4200/admin">Profil Güncelle</a></li>
+          <li ngbDropdownItem><a class="dropdown-item" href="#" (click)="cikis()">Çıkış</a></li>
+        </ul>
+      </li>
+      
+      
+    </div>
+
+    <!-- Burada ise app-color-select-option ve app-brand-select-option bileşenleri her zaman gösterilecektir -->
+    <app-color-select-option></app-color-select-option>
+    <app-brand-select-option></app-brand-select-option>
+  </div>
+</nav>

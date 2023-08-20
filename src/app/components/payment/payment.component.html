@@ -1,0 +1,39 @@
+<div *ngIf="carDataUpdated && carImagesUpdated" class="checkout">
+  <div class="order">
+    <h2 class="text-danger">Ödeme Bilgileri</h2>
+    <div id="payment" class="payment">
+      <div class="card">
+        <div class="card-content">
+          <h5>Kart Numarası</h5>
+          <h6>{{ cardNumber }}</h6>
+          <h5>Son Kullanma Tarihi<span>CVC</span></h5>
+          <h6>{{ expiryMonthAndYear }}<span>{{ cvv }}</span></h6>
+        </div>
+        <div class="wave"></div>
+      </div>
+      <div class="card-form">
+       
+          <p class="field">
+            <input [(ngModel)]="cardOwner" type="text" id="cardowner" name="cardowner" placeholder="Kart Sahibi" />
+          </p>
+          <p class="field">
+            <input [(ngModel)]="cardNumber" type="text" id="cardnumber" name="cardnumber" placeholder="1234 5678 9123 4567" />
+          </p>
+          <p class="field space">
+            <input [(ngModel)]="expiryMonthAndYear" type="text" id="cardexpiration" name="cardexpiration" placeholder="MM / YYYY" />
+          </p>
+          <p class="field">
+            <input [(ngModel)]="cvv" type="text" id="cardcvc" name="cardcvc" placeholder="123" />
+          </p>
+       
+        <div class="field">
+          <input [(ngModel)]="savedCard" type="checkbox" id="savedCard" name="savedCard" />
+          <label for="savedCard">Kartı Kaydet</label>
+        </div>
+        <button (click)="pay()" class="button-cta bg-danger border-danger" title="Satın Almayı Onayla">
+          <span>Ödeme Yap</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

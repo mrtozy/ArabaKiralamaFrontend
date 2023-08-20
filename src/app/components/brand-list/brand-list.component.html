@@ -1,0 +1,31 @@
+<div>
+    <h4>Marka Listesi</h4>
+   
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marka</th>
+                <th>Seçenekler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let brand of brands">
+                <td>{{brand.brandId}}</td>
+                <td>{{brand.brandName}}</td>
+                <td>
+                    <div>
+                        <a routerLink="/brands/add"  >
+                            ekle
+                          </a>
+                       
+                        <a routerLink="/brand/update/{{brand.brandId}}"  >
+                            güncelle
+                          </a>
+                       
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,39 @@
+<body class="text-center">
+    <main class="form-signin">
+       
+          
+            <form [formGroup]="registerForm" class="mt-4">
+                <div class="form-floating mb-2">
+                    <input formControlName="firstName" type="text" class="form-control" id="signupfirstname"
+                        placeholder="Ad">
+                    <label for="signupfirstname">Ad</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <input formControlName="lastName" type="text" class="form-control" id="signuplastname"
+                        placeholder="Soyad">
+                    <label for="signuplastname">Soyad</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <input formControlName="email" type="email" class="form-control" id="signupemail"
+                        placeholder="name@example.com">
+                    <label for="signupemail">E-posta</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <input formControlName="password" type="password" class="form-control" id="signuppassword"
+                        placeholder="Parola">
+                    <label for="signuppassword">Parola</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <input formControlName="confirmPassword" type="password" class="form-control"
+                        id="signupconfirmpassword" placeholder="Parola tekrar">
+                    <label for="signupconfirmpassword">Parola tekrar</label>
+                </div>
+
+               
+                <button (click)="register()" class="w-100 btn btn-lg" >Kayıt Ol </button>
+
+                
+            </form>
+        
+    </main>
+</body>

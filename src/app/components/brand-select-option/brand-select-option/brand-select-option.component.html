@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-between">
+    <select class="form-select" [(ngModel)]="brandId">
+        
+        <option *ngFor="let b of brands" [value]="b.brandId">
+            {{b.brandName}}
+          
+           
+        </option>
+        
+    </select>
+    <button class="btn btn-success" routerLink="/cars/brand/{{brandId}}">
+        Filtrele</button>
+   
+    
+</div>

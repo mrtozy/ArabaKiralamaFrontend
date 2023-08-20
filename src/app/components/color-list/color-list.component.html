@@ -1,0 +1,31 @@
+<div>
+    <h4>Renk Listesi</h4>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marka</th>
+                <th>Seçenekler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let color of colors">
+                <td>{{color.colorId}}</td>
+                <td>{{color.colorName}}</td>
+                <td>
+                    <div>
+                        <a routerLink="/colors/add"  >
+                            ekle
+                          </a>
+                       
+                        <a routerLink="/colors/update/{{color.colorId}}"  >
+                            güncelle
+                          </a>
+                       
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,47 @@
+
+
+<div class="card" *ngIf="carDetail">
+  <div class="card-header text-center lead fw-bolder border-dark">
+    {{ carDetail.description }}
+  </div>
+ 
+  <div class="card-body d-flex flex-column align-items-center">
+    <div class="card-text border badge bg-dark p-3 fs-6 w-75 max- mt-2">
+      <span>Marka:</span
+      ><span class="ms-2">{{ carDetail.carName }}</span>
+    </div>
+    <div class="card-text border badge bg-dark p-3 fs-6 w-75 mt-2">
+      <span>Model Yıl:</span
+      ><span class="ms-2">{{ carDetail.modelYear }}</span>
+    </div>
+   
+    <div class="card-text border badge bg-dark p-3 px-3 fs-6 w-75 mt-2">
+      <span>Günlük Fiyat:</span
+      ><span class="ms-2">{{
+        carDetail.dailyPrice 
+      }}</span>
+    </div>
+  </div>
+  <div class="card-link mx-auto my-2">
+ 
+
+
+        <tr  *ngFor="let carImage of carImages">
+
+        
+          <img src="https://localhost:7026/{{ carImage.imagePath }}"  width="500" height="600">
+         
+          
+         
+    
+        
+        
+        
+        </tr>
+        <img src="{{defoult}}"  width="500" height="600">
+       
+
+        <app-rental>
+         
+        </app-rental>
+     
